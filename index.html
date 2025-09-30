@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Path Getter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/json-to-ast@2.1.0/dist/json-to-ast.min.js"></script>
+  </head>
+  <body>
+    <main class="layout">
+      <header class="header">
+        <h1>JSON Path Getter</h1>
+        <p>Выберите позицию курсора в JSON и получите соответствующий JPath.</p>
+      </header>
+      <section class="panel">
+        <label class="panel__label" for="jsonInput">JSON</label>
+        <textarea
+          id="jsonInput"
+          class="panel__textarea"
+          spellcheck="false"
+          aria-describedby="errorMessage"
+        >{
+  "test": {
+    "array": [
+      { "val": 1 },
+      { "val": 2 }
+    ]
+  }
+}
+        </textarea>
+        <p id="errorMessage" class="panel__error" role="alert" aria-live="polite"></p>
+      </section>
+      <section class="panel">
+        <label class="panel__label" for="pathOutput">Текущий JPath</label>
+        <output id="pathOutput" class="panel__output" aria-live="polite">$</output>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
